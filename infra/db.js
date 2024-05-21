@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const mysql2 = require('mysql2').verbose();
+const mysql2 = require('mysql2');
 
 // Create Sequelize instance
 const sequelize = new Sequelize({
