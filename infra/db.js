@@ -1,8 +1,10 @@
 const Sequelize = require('sequelize');
+const mysql2 = require('mysql2').verbose();
 
 // Create Sequelize instance
 const sequelize = new Sequelize({
   dialect: 'mysql',
+  dialectModule: mysql2,
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
   username: process.env.DB_USERNAME,
