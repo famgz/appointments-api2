@@ -1,28 +1,15 @@
 const Sequelize = require('sequelize');
-const mysql2 = require('mysql2');
 
-// Create Sequelize instance
-const sequelize = new Sequelize({
-  dialect: 'mysql',
-  dialectModule: mysql2,
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  username: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  logging: console.log,
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000,
-  },
+console.log(process.env.NEON_DB_CONNECTION_STRING);
+
+const databaseUrl = process.env.NEON_DB_CONNECTION_STRING;
+
+const sequelize = new Sequelize(databaseUrl, {
   dialectOptions: {
-    connectTimeout: 60000, // 60 seconds
+    connectTimeout: 60000,
   },
 });
 
-// Test the connection
 sequelize
   .authenticate()
   .then(() => {
