@@ -13,7 +13,7 @@ const router = require('./router');
 const app = express();
 
 const corsOptions = {
-  origin: ['https://consult-med.vercel.app', 'http://localhost:4200'],
+  // origin: ['https://consult-med.vercel.app', 'http://localhost:4200'],
 };
 
 app.use(cors(corsOptions));
