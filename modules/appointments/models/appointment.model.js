@@ -29,7 +29,7 @@ const Appointment = database.define('Appointment', {
     defaultValue: 'SCHEDULED',
   },
   obs: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING(1000),
     allowNull: false,
   },
 });
