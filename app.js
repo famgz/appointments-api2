@@ -2,8 +2,12 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 
+const SWAGGER_CSS_URL =
+  'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css';
+
 const swaggerUi = require('swagger-ui-express');
 const swaggerFile = require('./swagger_output.json');
+swaggerUi.setup({ customCssUrl: SWAGGER_CSS_URL });
 
 const router = require('./router');
 
