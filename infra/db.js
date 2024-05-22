@@ -1,3 +1,4 @@
+require('pg');
 const Sequelize = require('sequelize');
 
 console.log(process.env.NEON_DB_CONNECTION_STRING);
