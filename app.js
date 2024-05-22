@@ -9,7 +9,11 @@ const router = require('./router');
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: ['https://consult-med.vercel.app', 'http://localhost:4200'],
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(router);
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
